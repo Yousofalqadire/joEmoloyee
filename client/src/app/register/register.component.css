@@ -1,0 +1,24 @@
+.form-control{
+    width: 70%;
+    font-family: 'Cairo', sans-serif;
+
+}
+.file{
+    padding: 16px;
+    margin-left:90px;
+}
+.mat-form-field{
+    width: 70%;
+    padding: 16px;
+    text-align: right;
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+
+}
+.submit{
+    padding: 25px;
+}
+.container p,button{
+    font-family: 'Cairo', sans-serif;
+
+}

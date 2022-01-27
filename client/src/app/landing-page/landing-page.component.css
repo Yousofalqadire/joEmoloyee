@@ -1,0 +1,12 @@
+div p{
+    font-family: 'Cairo', sans-serif;
+  font-weight: bold;
+  color: #372832;
+}
+#map{
+  height: 400px;
+  
+}
+.dummy{
+  height: 50px;
+}

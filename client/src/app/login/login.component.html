@@ -1,0 +1,45 @@
+<div class="container-fluid text-center">
+   
+        <h1 class="mat-display-2 text-center" mat-dialog-title>تسجيل الدخول </h1>
+        <mat-dialog-content align='center' >
+            <form [formGroup]="loginForm"> 
+             <mat-form-field> 
+                 <mat-label>الايميل</mat-label>
+                 <input matInput
+                 formControlName="Email"
+                 type="email">
+                 <mat-icon matSuffix>email</mat-icon>
+                 <mat-error *ngIf="loginForm.get('Email')?.touched || loginForm.get('Email')?.hasError('Required')">
+                    <div class="alert alert-danger" role="alert">
+                        يجب عليك ادخال اسم مستخدم صحيح
+                      </div>
+                 </mat-error>
+             </mat-form-field>
+             <br/>
+             <mat-form-field > 
+                <mat-label>كلمة المرور  </mat-label>
+                <input matInput
+                formControlName="Password"
+                [type]="showPassword? 'password': 'text'">
+               <button mat-icon-button matSuffix (click)="showPassword = !showPassword">
+                <mat-icon matSuffix>{{showPassword ? 'visibility_of' : 'visibility'}}</mat-icon>
+               </button>
+               <mat-error *ngIf="loginForm.get('Password')?.touched || loginForm.get('Password')?.hasError('required')">
+                <div class="alert alert-danger" role="alert">
+                    يجب عليك ادخال الرمز السري
+                  </div>
+             </mat-error>
+         
+            </mat-form-field>
+            </form>
+        </mat-dialog-content>
+          <button mat-flat-button class="d-inline-flex" class="btn-link" routerLink="/home/register">ليس لديك حساب ؟</button>
+          <button mat-flat-button class="d-inline-flex" >نسيت كلمة المرور ؟</button>
+            <mat-dialog-actions align="center">
+                <button mat-flat-button (click)="closeDialog()" color="warn" fxFill>
+                    تسجيل الدخول 
+                   </button>
+            </mat-dialog-actions>
+        
+   
+</div>

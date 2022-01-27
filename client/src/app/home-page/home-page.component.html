@@ -1,0 +1,43 @@
+<mat-sidenav-container>
+    <mat-sidenav mode="push" #sidenav position="end">
+
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+     <header > 
+      <mat-toolbar color="primary">
+        <mat-toolbar-row>
+          <span>My App</span>
+          <span class="example-spacer"></span>
+          <button mat-icon-button class="example-icon" (click)="sidenav.toggle()"
+           aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </mat-toolbar-row>
+    
+        <mat-toolbar-row fxLayout='row  flex-layout' >
+          <span>JO EMPLOYEE</span>
+          <span class="dummy"></span>
+          <span  *ngIf="(accountService.currintUser$ | async)== null">
+            <button mat-icon-button (click)="openLoginDialog()" class="example-icon favorite-icon" 
+            aria-label="Example icon-button with heart icon">
+              <mat-icon>login</mat-icon>
+            </button>
+            <button mat-icon-button class="example-icon" routerLink="/home/register" aria-label="Example icon-button with share icon">
+              <mat-icon>create</mat-icon>
+            </button>
+          </span>
+          <span *ngIf="(accountService.currintUser$ | async)" >
+            <button mat-icon-button (click)="openLoginDialog()" fxFill class="example-icon favorite-icon" 
+            aria-label="Example icon-button with heart icon">
+            {{user? user.userName: ''}}
+              <mat-icon>member</mat-icon>
+            </button>
+            
+            
+          </span>
+        </mat-toolbar-row>
+      </mat-toolbar>
+     </header> 
+     <router-outlet> </router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

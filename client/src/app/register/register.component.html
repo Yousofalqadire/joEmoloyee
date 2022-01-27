@@ -1,0 +1,116 @@
+<div class="container-fluid mt-3">
+    <div class="container text-center">
+        <p class="mat-display-2"> انشاء حساب جديد</p> 
+    </div>
+   <form [formGroup]="regForm" (ngSubmit)="register()"> 
+    <div class="row text-center" fxFill>
+        <div class="col-md-6 col-sm-12">
+          <mat-form-field >
+              <mat-label>الشارع</mat-label>
+              <input matInput type="text"
+              formControlName="Street">
+              <mat-error *ngIf="regForm.get('Street')?.touched && regForm.get('Street')?.hasError('required')">
+                <div class="alert alert-danger" role="alert">
+                    يجب عليك ادخال اسم الشارع 
+                  </div>
+              </mat-error>
+          </mat-form-field>
+          <mat-form-field >
+            <mat-label>المهارة / الصنعة </mat-label>
+            <input matInput type="text"
+            formControlName="Litral">
+            <mat-error *ngIf="regForm.get('Litral')?.touched && regForm.get('Litral')?.hasError('required')">
+              <div class="alert alert-danger" role="alert">
+                  يجب عليك ادخال  الحرفة  
+                </div>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field >
+            <mat-label> الموبايل   </mat-label>
+            <input matInput type="text"
+            formControlName="PhoneNumber">
+            <mat-error *ngIf="regForm.get('PhoneNumber')?.touched && regForm.get('PhoneNumber')?.hasError('required')">
+              <div class="alert alert-danger" role="alert">
+                  يجب عليك ادخال  رقم الموبايل   
+                </div>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field  color="accent">
+            <mat-label> تاريخ الميلاد </mat-label>
+                <input matInput [matDatepicker]="picker1" formControlName="BirthDay">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+        <div class="container text-center file">
+            <input type="file" class="form-control form-control-sm"
+            formControlName="photo"
+            (change)="onFileChange($event)">
+        </div>
+         
+        </div>
+        <div class="col-md-6 col-sm-12">
+         <mat-form-field >
+         <mat-label>الايميل</mat-label>
+         <input matInput 
+         type="email"
+         formControlName="Email">
+         <mat-icon matSuffix>email</mat-icon>
+         <mat-error *ngIf="regForm.get('Email')?.touched && regForm.get('Email')?.hasError('required')">
+            <div class="alert alert-danger" role="alert">
+                يجب عليك ادخال اسم مستخدم صحيح
+              </div>
+         </mat-error>
+         </mat-form-field>
+         <mat-form-field >
+            <mat-label> كلمة المرور </mat-label>
+            <input matInput 
+            [type]="hide? 'text': 'password'"
+            formControlName="Password">
+           <button mat-icon-button matSuffix  (click)="hide = !hide "> 
+               <mat-icon>{{hide? 'visibility_of':'visibility'}}</mat-icon>
+          </button>
+            <mat-error *ngIf="regForm.get('Password')?.touched && regForm.get('Password')?.hasError('required')">
+               <div class="alert alert-danger" role="alert">
+                   يجب عليك ادخال كلمة المرور
+                 </div>
+            </mat-error>
+            </mat-form-field>
+            <mat-form-field >
+                <mat-label>تأكيد كلمة المرور</mat-label>
+                <input matInput 
+                [type]="hide? 'text': 'password'"
+                formControlName="ConfirmPasword">
+               <button mat-icon-button matSuffix (click)="hide = !hide "> 
+                   <mat-icon>{{hide? 'visibility_of':'visibility'}}</mat-icon>
+              </button>
+                <mat-error *ngIf="regForm.get('ConfirmPasword')?.touched && regForm.get('ConfirmPasword')?.hasError('passwordMismatch')">
+                   <div class="alert alert-danger" role="alert">
+                       يجب عليك مطابقة الرمز السري
+                     </div>
+                </mat-error>
+                </mat-form-field>
+                <mat-form-field >
+                    <mat-label>  الاسم من اربعة مقاطع</mat-label>
+                    <input matInput 
+                    type="text"
+                    formControlName="FullName">                 
+                    <mat-error *ngIf="regForm.get('FullName')?.touched && regForm.get('FullName')?.hasError('required')">
+                       <div class="alert alert-danger" role="alert">
+                           يجب عليك ادخال الاسم من اربعة مقاطع 
+                         </div>
+                    </mat-error>
+                    </mat-form-field>
+                    <mat-form-field >
+                        <mat-label>المدينة / المحافظة</mat-label>
+                <mat-select  formControlName="City">
+                    <mat-option *ngFor="let c of city" [value]="c.name">{{c.name}}</mat-option>
+                </mat-select>
+                        </mat-form-field>
+        </div>
+       
+    </div>
+    <div class="container text-center submit" >
+        <button fxFill mat-flat-button type="submit" [disabled]="regForm.invalid " color="warn">انشاء حساب </button>
+       </div>
+   </form>
+</div>
