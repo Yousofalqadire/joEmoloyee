@@ -24,7 +24,6 @@ export class LandingPageComponent implements OnInit {
       let ululr = {lat:res.lat,lng:res.lng}
       
       let loader = new Loader({
-        apiKey:'AIzaSyBoVDyNDRzCju-Uzcxjiv-8J8wq55amNf4'
       })
      loader.load().then(()=>{
      const map= new google.maps.Map(document.getElementById('map') as HTMLElement,{
