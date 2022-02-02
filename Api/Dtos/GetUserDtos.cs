@@ -16,7 +16,6 @@ namespace Api.Dtos;
         public bool LitralMan { get; set; }
         public string UserName { get; set; }
         public string Litral { get; set; }
-
         public PhotoDto Photo { get; set; }
         public AddressDto Address { get; set; }
         public string Token { get; set; }

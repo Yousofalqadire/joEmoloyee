@@ -15,5 +15,9 @@
   .dummy{
       width:80%
   }
+  .title{
+      letter-spacing: 3px;
+      font-family: 'Abel', sans-serif;
+  }
   
 

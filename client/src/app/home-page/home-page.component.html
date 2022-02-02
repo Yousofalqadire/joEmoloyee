@@ -6,7 +6,7 @@
      <header > 
       <mat-toolbar color="primary">
         <mat-toolbar-row>
-          <span>My App</span>
+          <span class="title">WORKER APP </span>
           <span class="example-spacer"></span>
           <button mat-icon-button class="example-icon" (click)="sidenav.toggle()"
            aria-label="Example icon-button with menu icon">
@@ -15,7 +15,7 @@
         </mat-toolbar-row>
     
         <mat-toolbar-row fxLayout='row  flex-layout' >
-          <span>JO EMPLOYEE</span>
+          <span class="title">JO EMPLOYEE</span>
           <span class="dummy"></span>
           <span  *ngIf="(accountService.currintUser$ | async)== null">
             <button mat-icon-button (click)="openLoginDialog()" class="example-icon favorite-icon" 

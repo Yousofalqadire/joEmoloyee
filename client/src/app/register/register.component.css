@@ -22,3 +22,7 @@
     font-family: 'Cairo', sans-serif;
 
 }
+#map{
+    height: 250px;
+    width:250px;
+}

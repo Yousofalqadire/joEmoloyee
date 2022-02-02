@@ -4,9 +4,85 @@ div p{
   color: #372832;
 }
 #map{
-  height: 400px;
+  height: 300px;
   
 }
 .dummy{
   height: 50px;
+}
+.mat-form-field{
+  width: 70%;
+  padding: 20px;
+  text-align: right;
+  direction: rtl;
+  font-family: 'Cairo', sans-serif;
+
+}
+.mat-option{
+  font-family: 'Cairo', sans-serif;
+
+}
+.animated{
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    padding: 16px;
+    
+}
+.animated p{
+  color:white
+}
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+/* acccordion*/
+.example-accordion {
+  display: block;
+  max-width: 500px;
+}
+
+.example-accordion-item {
+  display: block;
+  border: solid 1px #ccc;
+}
+
+.example-accordion-item + .example-accordion-item {
+  border-top: none;
+}
+button{
+  font-family: 'Cairo', sans-serif;
+
+}
+
+
+.example-accordion-item-description {
+  font-size: 0.85em;
+  color:white;
+  font-family: 'Cairo', sans-serif;
+  background-color: tomato;
+  padding: 10px;
+  border-radius: 5px;
+}
+.example-accordion-item-header,
+.example-accordion-item-body {
+  padding: 16px;
+}
+
+.example-accordion-item-header:hover {
+  cursor: pointer;
+  background-color: #eee;
+}
+
+footer{
+  height: 150px;
+  background-color: black;
 }

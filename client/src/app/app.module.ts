@@ -15,6 +15,7 @@ import { AccountService } from 'services/account.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CustomValidationsService } from 'services/custom-validations.service';
 import { LocationService } from 'services/location.service';
+import { OrdersService } from 'services/orders.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { LocationService } from 'services/location.service';
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
   entryComponents:[LoginComponent],
-  providers: [AccountService,CustomValidationsService ,LocationService],
+  providers: [AccountService,CustomValidationsService ,LocationService,OrdersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

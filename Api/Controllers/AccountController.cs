@@ -56,7 +56,14 @@ public class AccountController : ControllerBase
       var address = new Address
       {
         City = model.City,
-        Street = model.Street
+        Street = model.Street,
+        Country = model.Country,
+        Governorate = model.Governorate,
+        PlaceId = model.PlaceId,
+        Latitude = Convert.ToDouble(model.Latitude),
+        Longitude = Convert.ToDouble(model.Longitude),
+        Airea = model.Airea
+        
       };
        var _user = new ApplicationUser
        {
@@ -81,7 +88,6 @@ public class AccountController : ControllerBase
            uriBuilder.Query = query.ToString();
            var link = uriBuilder.ToString();
            emailSender.SendEmailAsync(u.Email,"Confirm Email","<a href='"+link+"'>"+link +"</a>");
-           var userToReturn = mapper.Map<GetUsersDtos>(_user);
 
            return Ok(result.Succeeded);
        }

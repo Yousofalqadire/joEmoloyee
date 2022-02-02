@@ -14,6 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.Configure<EmailConfiguration>(builder.Configuration.GetSection("EmailConfigrations"));
+builder.Services.AddScoped<IOrder,OrderRepository>();
 builder.Services.AddSingleton<IEmailSender,EmailSender>();
 builder.Services.AddScoped<ITokenService,TokenService>();
 builder.Services.AddAutoMapper(typeof(ProjectAutoMapper).Assembly);

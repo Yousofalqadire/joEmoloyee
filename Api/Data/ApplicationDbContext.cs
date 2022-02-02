@@ -10,6 +10,7 @@ namespace Api.Data ;
 
     public class ApplicationDbContext:IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Order> Orders { get; set; }
         public ApplicationDbContext(DbContextOptions options):base(options)
         {
         }
